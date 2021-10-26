@@ -29,7 +29,6 @@ import com.google.cloud.speech.v1.SpeechSettings;
 @RestController
 public class SpeechToTextController{
 
-	
 	private CredentialsProvider credentialProvider;
 	
 	@Autowired
