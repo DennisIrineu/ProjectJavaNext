@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+            	       
+    <modelVersion>4.0.0</modelVersion>
+            	    
+    <parent>       
+        <groupId>org.springframework.boot</groupId>        
+        <artifactId>spring-boot-starter-parent</artifactId>
+       <version>2.5.5</version>        
+        <relativePath/>
+       <!-- lookup parent from repository -->   
+    </parent>
+            	
+    <groupId>school.java.next</groupId>    
+    <artifactId>project</artifactId>   
+    <version>0.0.1-SNAPSHOT</version>  
+    <name>project</name> 
+    <description>Translate audio to other langueage with text.</description>
+  
+    <properties>      
+        <java.version>11</java.version>        
+        <spring-cloud-gcp.version>2.0.4</spring-cloud-gcp.version>                       		       
+        <spring-cloud.version>2020.0.4</spring-cloud.version>   
+    </properties>
+
+    <dependencies> 
+        <dependency>
+          <groupId>org.springframework.boot</groupId>                                   			           
+          <artifactId>spring-boot-starter-thymeleaf</artifactId>     
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>        
+            <artifactId>spring-boot-starter-web</artifactId>     
+        </dependency>
+        <dependency>         
+            <groupId>com.google.cloud</groupId>         
+            <artifactId>spring-cloud-gcp-starter-storage</artifactId>    
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-devtools</artifactId>       
+            <scope>runtime</scope>        
+            <optional>true</optional>     
+        </dependency>
+        <dependency>         
+            <groupId>org.projectlombok</groupId>       
+            <artifactId>lombok</artifactId>         
+            <optional>true</optional>       
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>         
+            <artifactId>spring-boot-starter-test</artifactId>         
+            <scope>test</scope>       
+        </dependency>     
+        <dependency>
+		    <groupId>org</groupId>
+		    <artifactId>jaudiotagger</artifactId>
+		    <version>2.0.3</version>
+		</dependency>
+        <dependency>                                               
+            <groupId>com.google.cloud</groupId>                                               
+            <artifactId>google-cloud-speech</artifactId>                                      
+        </dependency>
+        <dependency>                                                
+            <groupId>com.google.cloud</groupId>                                                
+            <artifactId>google-cloud-translate</artifactId>                                      
+        </dependency>
+        <dependency>                                                
+            <groupId>com.google.cloud</groupId>                                                
+            <artifactId>google-cloud-texttospeech</artifactId>                                       
+        </dependency>
+        <dependency>                        
+            <groupId>com.googlecode.objectify</groupId>                        
+            <artifactId>objectify</artifactId>                        
+            <version>6.0.7</version>                   
+        </dependency>
+            
+    </dependencies>
+            	
+    
+    
+    <dependencyManagement>                        		        
+        
+        <dependencies>                                    			           
+            
+            <dependency>                                                				                                
+                <groupId>org.springframework.cloud</groupId>                                                				                               
+                <artifactId>spring-cloud-dependencies</artifactId>                                                				                                
+                <version>${spring-cloud.version}</version>                                               				                                
+                <type>pom</type>                                                				                                
+                <scope>import</scope>                                              			                        
+            </dependency>                                  			            
+            
+            <dependency>                                                				                                
+                <groupId>com.google.cloud</groupId>                                                				                                
+                <artifactId>spring-cloud-gcp-dependencies</artifactId>                                                				                                
+                <version>${spring-cloud-gcp.version}</version>                                                				                                
+                <type>pom</type>                                                				                                
+                <scope>import</scope>                                                			                        
+            </dependency>                                    		            
+            
+            <dependency>                                                                
+                <groupId>com.google.cloud</groupId>                                                                
+                <artifactId>libraries-bom</artifactId>                                                                
+                <type>pom</type>                                                                
+                <scope>import</scope>                                                                
+                <version>23.1.0</version>                                                        
+            </dependency>
+                                        
+        </dependencies>                        	    
+    
+    </dependencyManagement>            	        
+    <build>                        		                
+        <plugins>                                    			                       
+            <plugin>                                                				                               
+                <groupId>org.springframework.boot</groupId>                                               				                                
+                <artifactId>spring-boot-maven-plugin</artifactId>                                                				                                
+                <configuration>                                                            					                                        
+                    <excludes>                                                                        						                                               
+                        <exclude>                                                                                    							                                                        
+                            <groupId>org.projectlombok</groupId>                                                                                   							                                                        
+                            <artifactId>lombok</artifactId>                                                                                    						                                                
+                        </exclude>                                                                        					                                        
+                    </excludes>                                                            				                                
+                </configuration>                                                			                        
+            </plugin>                                    		                
+        </plugins>                        	        
+    </build>            
+</project>
+
