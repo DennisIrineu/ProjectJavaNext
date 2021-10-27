@@ -30,8 +30,10 @@
 [Google](https://www.google.com/)
 
 ### Gerentes do Projeto (professores CESAR School):
-* Ikaro Sales
-* Lucas Jordani
+
+|     NOME_1     |     NOME_2      |
+|----------------|-----------------|
+|  Ikaro Sales   |  Lucas Jordani  |
 
 ### Linguagem de Desenvolvimento Utilizada:
   Este projeto foi desenvolvido em Java, conforme abaixo: 
@@ -56,10 +58,10 @@
   Foram utilizados diversos recursos tanto de bibliotecas, API, como IDE, diversificando assim as possibilidades opções de desenvolvimento do programa.
   
 ***Alguns recursos utilizados:***
-- IDE - Visual Studio Code (VS Code) Microsoft
-- IDE - Eclipse Foundation 2021-09 (4.21.0)
-- Classe jaudiotagger-2.2.3 (para checagem de tamanho máximo do arquivo de áudio, e de tipo de arquivo (se de áudio))
-- API - Cloud Speech-to-Text 
-- API - Cloud Translation 
+- [x] IDE - Visual Studio Code (VS Code) Microsoft
+- [x] IDE - Eclipse Foundation 2021-09 (4.21.0)
+- [x] Classe jaudiotagger-2.2.3 (para checagem de tamanho máximo do arquivo de áudio, e de tipo de arquivo (se de áudio))
+- [x] API - Cloud Speech-to-Text 
+- [x] API - Cloud Translation 
 
 
