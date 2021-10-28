@@ -1,0 +1,12 @@
+{
+  "config": {
+      "encoding":"LINEAR16",
+      "sampleRateHertz": 16000,
+      "languageCode": "en-US",
+      "enableWordTimeOffsets": false,
+      "audioChannelCount": 1
+  },
+  "audio": {
+      "uri":"gs://javaproject/test-audio.wav"
+  }
+}

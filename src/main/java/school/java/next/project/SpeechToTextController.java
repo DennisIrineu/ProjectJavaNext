@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.api.gax.core.CredentialsProvider;
@@ -27,14 +28,15 @@ import com.google.cloud.speech.v1.SpeechSettings;
 
 
 @RestController
+@RequestMapping("/api/v1/translate")
 public class SpeechToTextController{
 
 	private CredentialsProvider credentialProvider;
 	
-	@Autowired
-	public void setCredentialProvider(CredentialsProvider credentialProvider) {
-		this.credentialProvider = credentialProvider;
-	}
+	/*
+	 * @Autowired public void setCredentialProvider(CredentialsProvider
+	 * credentialProvider) { this.credentialProvider = credentialProvider; }
+	 */
 	
 	//Sobre a chave -> https://cloud.google.com/docs/authentication/api-keys?hl=pt-BR&visit_id=637708523648151876-1931066408&rd=1
 	private SpeechSettings settings = null;
@@ -43,7 +45,7 @@ public class SpeechToTextController{
 	@PostConstruct
 	public void initialize() throws IOException {
 		CredentialsProvider credentialProviders = FixedCredentialsProvider.create(ServiceAccountCredentials
-				.fromStream(new FileInputStream("src/main/resources/google_credentions.json")));
+				.fromStream(new FileInputStream("src/main/resources/google_credentials.json")));
 		settings = SpeechSettings.newBuilder().setCredentialsProvider(credentialProviders).build();
 	}
 	
@@ -51,15 +53,15 @@ public class SpeechToTextController{
 	@GetMapping(path = {"/speech"})
 	public Message convertSpeetchToText() throws Exception{
 		try(SpeechClient client = SpeechClient.create(settings)){
-			RecognitionConfig.Builder builder = RecognitionConfig.newBuilder().setEncoding(AudioEncoding.FLAC)
+			RecognitionConfig.Builder builder = RecognitionConfig.newBuilder().setEncoding(AudioEncoding.ENCODING_UNSPECIFIED)
 					.setLanguageCode("en-US").setEnableAutomaticPunctuation(true).setEnableWordTimeOffsets(true);
 			
 			
-			builder.setModel("default");
+			builder.setModel("src/main/resources/sync-request.json"); //  default
 			
 			RecognitionConfig config = builder.build();
 			
-			RecognitionAudio audio = RecognitionAudio.newBuilder().setUri("gs://javaproject/Marvin").build();
+			RecognitionAudio audio = RecognitionAudio.newBuilder().setUri("gs://javaproject/test-audio.wav").build();
 			
 			OperationFuture<LongRunningRecognizeResponse,LongRunningRecognizeMetadata> response = client.longRunningRecognizeAsync(config, audio);
 			

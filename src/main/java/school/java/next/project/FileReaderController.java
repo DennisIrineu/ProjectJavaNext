@@ -20,7 +20,7 @@ public class FileReaderController {
 		StringBuilder sb = new StringBuilder();
 
 		
-		try (ReadChannel channel = storage.reader("javaproject", "config.txt")) {
+		try (ReadChannel channel = storage.reader("javaproject", "config")) {
 			ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
 			while (channel.read(bytes) > 0) {
 				bytes.flip();
