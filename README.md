@@ -64,4 +64,7 @@
 - [x] API - Cloud Speech-to-Text 
 - [x] API - Cloud Translation 
 
+### Arquitetura do Projeto:
+
+![Esquema_Sales](https://user-images.githubusercontent.com/89612983/139459371-b08d02a7-0be3-41f7-b0dc-56f62a578cda.jpg)
 
