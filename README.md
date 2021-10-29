@@ -1,6 +1,5 @@
-## Project: TRANSLATE AUDIO FILE ENGLISH-PORTUGUESE
+## Project: TRANSLATE AUDIO FILE ENGLISH-PORTUGUESE - EM PRODRUÇÃO
 
-# EM PRODUÇÃO
 
 ### Objetivo:
   Tem como objetivo a criação e a apresentação do projeto como finalização do curso NExT do CESAR SCHOOL, onde foram apresentadas as linguagens Python e Java.
